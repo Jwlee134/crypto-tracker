@@ -5,6 +5,7 @@ import Router from "./Router";
 const GlobalStyles = createGlobalStyle`
   ${reset};
   a {
+    color: inherit;
     text-decoration: none;
   }
   * {
@@ -12,7 +13,7 @@ const GlobalStyles = createGlobalStyle`
   }
   body {
     background-color: ${({ theme }) => theme.bgColor};
-    color:${({ theme }) => theme.textColor}
+    color: ${({ theme }) => theme.textColor};
   }
 `;
 
