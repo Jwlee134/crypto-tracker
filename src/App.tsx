@@ -12,6 +12,7 @@ const GlobalStyles = createGlobalStyle`
     box-sizing: border-box;
   }
   body {
+    font-weight: 300;
     background-color: ${({ theme }) => theme.bgColor};
     color: ${({ theme }) => theme.textColor};
   }
