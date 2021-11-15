@@ -200,10 +200,12 @@ function Coin() {
               <Link to="price">Price</Link>
             </Tab>
           </Tabs>
-          <Routes>
-            <Route path="price" element={<Price />} />
-            <Route path="chart" element={<Chart />} />
-          </Routes>
+          {id && (
+            <Routes>
+              <Route path="price" element={<Price />} />
+              <Route path="chart" element={<Chart id={id} />} />
+            </Routes>
+          )}
         </>
       )}
     </Container>
