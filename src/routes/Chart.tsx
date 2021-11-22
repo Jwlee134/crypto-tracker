@@ -13,10 +13,11 @@ interface History {
   market_cap: number;
 }
 
-function Chart({ id }: { id: string }) {
+function Chart({ id, isDark }: { id: string; isDark: boolean }) {
   const { data, isLoading } = useQuery<History[]>(["ohlcv", id], () =>
     fetchCoinHistory(id)
   );
+
   return (
     <div>
       {isLoading ? (
@@ -35,7 +36,7 @@ function Chart({ id }: { id: string }) {
               background: "transparent",
             },
             grid: { show: false },
-            theme: { mode: "dark" },
+            theme: { mode: isDark ? "dark" : "light" },
             stroke: { curve: "smooth", width: 3 },
             xaxis: {
               labels: { show: false },
